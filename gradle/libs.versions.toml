@@ -1,0 +1,31 @@
+[versions]
+kotlin = "1.9.25"
+spring-boot = "3.4.1"
+dependency-management = "1.1.7"
+aws-sdk-bom = "2.30.16"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+dependency-management = { id = "io.spring.dependency-management", version.ref = "dependency-management" }
+
+[libraries]
+# Spring Boot
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
+spring-boot-starter-security = { group = "org.springframework.boot", name = "spring-boot-starter-security" }
+spring-boot-starter-oauth2-resource-server = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-resource-server" }
+
+# AWS SDK
+aws-sdk-bom = { group = "software.amazon.awssdk", name = "bom", version.ref = "aws-sdk-bom" }
+aws-sdk-dynamodb = { group = "software.amazon.awssdk", name = "dynamodb" }
+aws-sdk-dynamodb-enhanced = { group = "software.amazon.awssdk", name = "dynamodb-enhanced" }
+
+# Misc
+jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin" }
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
+
+# Testing
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
