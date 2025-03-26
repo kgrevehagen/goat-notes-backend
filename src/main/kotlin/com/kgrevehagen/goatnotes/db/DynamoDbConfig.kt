@@ -4,7 +4,7 @@ import com.kgrevehagen.goatnotes.notes.model.NoteEntity
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider
+import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
@@ -17,14 +17,11 @@ internal class DynamoDbConfig {
     @Value("\${aws.region}")
     private lateinit var awsRegion: String
 
-    @Value("\${aws.profile}")
-    private lateinit var awsProfile: String
-
     @Bean
     fun dynamoDbClient(): DynamoDbClient {
         return DynamoDbClient.builder()
             .region(Region.of(awsRegion))
-            .credentialsProvider(ProfileCredentialsProvider.create(awsProfile))
+            .credentialsProvider(DefaultCredentialsProvider.create())
             .build()
     }
 
