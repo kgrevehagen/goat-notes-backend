@@ -28,6 +28,7 @@ dependencies {
 	implementation(libs.jackson.module.kotlin)
 	implementation(libs.kotlin.reflect)
 
+	testImplementation(libs.assertk)
 	testImplementation(libs.spring.boot.starter.test)
 	testImplementation(libs.spring.security.test)
 	testImplementation(libs.kotlin.test.junit5)

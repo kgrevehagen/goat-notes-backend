@@ -26,6 +26,7 @@ jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackso
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
 
 # Testing
+assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version = "0.28.1" }
 spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
 spring-security-test = { group = "org.springframework.security", name = "spring-security-test" }
 kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
