@@ -19,7 +19,7 @@ internal data class NoteEntity(
     constructor() : this("", "", "", 0)
 
     @Component
-    companion object Factory {
+    class Factory {
         fun create(userId: String, noteId: String, noteText: String, createdAt: Long): NoteEntity {
             return NoteEntity(userId, noteId, noteText, createdAt)
         }
