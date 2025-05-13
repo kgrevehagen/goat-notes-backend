@@ -3,7 +3,7 @@ package com.kgrevehagen.goatnotes.notes
 import com.kgrevehagen.goatnotes.notes.model.CreateNoteRequest
 import com.kgrevehagen.goatnotes.notes.model.NoteDto
 
-internal class FakeNotesService : NotesService {
+internal class NotesServiceStub : NotesService {
 
     override fun add(userId: String, noteRequest: CreateNoteRequest): NoteDto {
         return NoteDto(userId, "1", noteRequest.noteText, 1)

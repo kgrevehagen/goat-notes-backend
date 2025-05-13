@@ -23,7 +23,7 @@ internal class NotesControllerTest @Autowired constructor(private val mockMvc: M
     @TestConfiguration
     class TestConfig {
         @Bean
-        fun notesService(): NotesService = FakeNotesService()
+        fun notesService(): NotesService = NotesServiceStub()
     }
 
     @Test
