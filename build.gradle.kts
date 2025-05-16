@@ -22,6 +22,8 @@ dependencies {
 	implementation(enforcedPlatform(libs.aws.sdk.bom))
 	implementation(libs.aws.sdk.dynamodb)
 	implementation(libs.aws.sdk.dynamodb.enhanced)
+	implementation(libs.aws.sdk.sso)
+	implementation(libs.aws.sdk.sso.oidc)
 	implementation(libs.spring.boot.starter.web)
 	implementation(libs.spring.boot.starter.security)
 	implementation(libs.spring.boot.starter.oauth2.resource.server)
