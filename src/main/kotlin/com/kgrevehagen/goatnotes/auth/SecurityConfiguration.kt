@@ -12,7 +12,9 @@ import org.springframework.security.web.SecurityFilterChain
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-internal class SecurityConfiguration {
+internal class SecurityConfiguration(
+    private val customAuthenticationEntryPoint: CustomAuthenticationEntryPoint
+) {
 
     @Bean
     @Throws(Exception::class)
@@ -26,6 +28,7 @@ internal class SecurityConfiguration {
                         .authenticated()
                 }
             )
+            .exceptionHandling { it.authenticationEntryPoint(customAuthenticationEntryPoint) }
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .oauth2ResourceServer { it.jwt(Customizer.withDefaults()) }
             .build()
