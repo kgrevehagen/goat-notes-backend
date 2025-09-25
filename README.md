@@ -2,6 +2,21 @@ A service for creating and listing notes for users.
 
 ## Setup
 
+WIP: This whole readme is a WIP, it might miss certain things and is not properly structured.
+
+### Running locally
+
+1. Create shared keycloak data with:
+```bash
+docker volume create goat-notes-dynamodb-data && docker volume create shared-keycloak-data
+```
+
+2. You have to spin up the containers for keycloak and dynamodb:
+```bash
+docker compose -f docker/dev/docker-compose.yml up -d
+```
+
+### Running prod
 This must be run with certain environment variables set, whether you're running it locally or in the cloud. These are:
 - `AWS_REGION`: The AWS region to use for the AWS SDK. Must match the region of DynamoDB instance. Defaults to `eu-north-1`.
 - `AWS_PROFILE`: The AWS profile to use for the AWS SDK.
